@@ -1,10 +1,5 @@
-rating,num_titles
-TV-MA,34
-TV-14,18
-TV-PG,17
-TV-Y7,10
-PG-13,8
-PG,6
-TV-Y,5
-R,3
-TV-G,2
+SELECT rating, COUNT(*) AS num_titles
+FROM netflix_titles
+WHERE rating IS NOT NULL
+GROUP BY rating
+ORDER BY num_titles DESC;
